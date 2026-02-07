@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LenisProvider } from "@/components/layout/LenisProvider";
+import CustomCursor from "@/components/ui/CustomCursor";
 import { untitledSans, tronicaMono, atHaussMono, pixelFont } from "@/lib/fonts";
 import "./globals.css";
 
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${untitledSans.variable} ${tronicaMono.variable} ${atHaussMono.variable} ${pixelFont.variable}`}>
       <body className="bg-black text-white antialiased">
+        <CustomCursor />
         <LenisProvider>
           {children}
         </LenisProvider>
