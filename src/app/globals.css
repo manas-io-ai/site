@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-accent: #EE344A;
+  --color-white-6: rgba(255, 255, 255, 0.06);
+  --color-white-12: rgba(255, 255, 255, 0.12);
+  --color-white-40: rgba(255, 255, 255, 0.40);
+  --color-white-60: rgba(255, 255, 255, 0.60);
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  --font-mono-alt: 'SF Mono', 'Fira Code', monospace;
+  --font-pixel: 'Courier New', 'Lucida Console', monospace;
+
+  --ease-text-reveal: cubic-bezier(0.430, 0.195, 0.020, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-snappy: cubic-bezier(0.19, 1, 0.22, 1);
+
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 700px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1400px;
+}
+
+/* Base styles */
+html {
+  background-color: #000000;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Selection */
+::selection {
+  background-color: #EE344A;
+  color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Marquee animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Text reveal clip */
+.text-reveal-clip {
+  overflow: hidden;
+}
+
+.text-reveal-clip > * {
+  transform: translateY(110%);
+}
+
+.text-reveal-clip.revealed > * {
+  transform: translateY(0);
+}
+
+/* Utility classes */
+.font-pixel {
+  font-family: var(--font-pixel), monospace;
+}
+
+.font-mono-alt {
+  font-family: var(--font-mono-alt), monospace;
+}
+
+/* Tag pill base styles */
+.tag-pill {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-family: var(--font-mono-alt), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  backdrop-filter: blur(3px);
+  transition: border-color 0.3s ease;
+}
+
+.tag-pill:hover {
+  border-color: rgba(255, 255, 255, 1);
+}
