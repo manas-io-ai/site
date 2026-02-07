@@ -4,54 +4,42 @@ interface VideoPlayerProps {
   className?: string;
 }
 
-function CornerCross({ className }: { className: string }) {
-  return (
-    <svg
-      width="8"
-      height="8"
-      viewBox="0 0 8 8"
-      fill="none"
-      className={`absolute ${className}`}
-    >
-      <line x1="4" y1="0" x2="4" y2="8" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-      <line x1="0" y1="4" x2="8" y2="4" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-    </svg>
-  );
-}
+// Mosaic cell colors from project gradients
+const mosaicColors = [
+  '#1a1a2e', '#16213e', '#0f0f23', '#1a0a2e',
+  '#1e1e1e', '#2d2d2d', '#0a1628', '#1a2744',
+  '#1a2e1a', '#0f2010', '#2e1a2e', '#1a0f2e',
+  '#1a1a2e', '#16213e', '#1e1e1e', '#0a1628',
+  '#2e1a2e', '#0f0f23', '#1a2744', '#2d2d2d',
+  '#1a0a2e', '#1a2e1a', '#0f2010', '#1a0f2e',
+];
 
 export function VideoPlayer({ className = '' }: VideoPlayerProps) {
   return (
     <div className={`relative ${className}`}>
-      <div className="relative aspect-video bg-white/[0.03] rounded-lg overflow-hidden">
-        <CornerCross className="top-3 left-3" />
-        <CornerCross className="top-3 right-3" />
-        <CornerCross className="bottom-3 left-3" />
-        <CornerCross className="bottom-3 right-3" />
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <button
-            type="button"
-            className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center hover:border-white/40 transition-colors cursor-pointer"
-            aria-label="Play showreel"
-          >
-            <svg
-              width="20"
-              height="24"
-              viewBox="0 0 20 24"
-              fill="none"
-              className="ml-1"
-            >
-              <path
-                d="M2 2L18 12L2 22V2Z"
-                fill="white"
-                fillOpacity="0.6"
-              />
-            </svg>
-          </button>
-          <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-white/40 mt-4">
-            Play Showreel
-          </span>
+      <div className="relative aspect-video overflow-hidden">
+        {/* Image mosaic grid */}
+        <div className="absolute inset-0 grid grid-cols-6 grid-rows-4">
+          {mosaicColors.map((color, i) => (
+            <div
+              key={i}
+              className="w-full h-full"
+              style={{ backgroundColor: color }}
+            />
+          ))}
         </div>
+
+        {/* Overlaid rectangular play button at bottom-right */}
+        <button
+          type="button"
+          className="absolute bottom-0 right-0 flex items-center gap-3 border border-white/[0.12] px-6 py-4 bg-black/60 backdrop-blur-sm text-[11px] font-mono uppercase tracking-[0.1em] text-white/60 hover:border-white/40 transition-colors cursor-pointer"
+          aria-label="Play showreel"
+        >
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+            <path d="M1 1L11 7L1 13V1Z" fill="white" fillOpacity="0.6" />
+          </svg>
+          PLAY SHOWREEL
+        </button>
       </div>
     </div>
   );

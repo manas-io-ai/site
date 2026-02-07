@@ -37,7 +37,7 @@ export function BottomBar() {
         <span className="text-white/40 text-[12px] font-mono">
           6 full cases · 76 archive fragments
         </span>
-        <div className="w-2 h-2 bg-white rounded-full" />
+        <div className="w-[6px] h-[6px] bg-white" />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import ScrollReveal from '@/components/animations/ScrollReveal';
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 md:px-10">
+    <section id="projects" className="py-20 px-[2.4rem]">
       <div className="flex flex-col gap-20">
         {projects.map((project, index) => (
           <ScrollReveal key={project.id} delay={index * 0.05}>

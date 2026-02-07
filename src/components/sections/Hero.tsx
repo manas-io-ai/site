@@ -54,17 +54,18 @@ export function Hero() {
 
         {/* Name + brand quote */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
-          <h1 className="text-[clamp(1.6rem,4.5vw,4rem)] font-semibold uppercase leading-[1] tracking-[0.02em]">
+          <h1 className="text-[clamp(1.4rem,2.5vw,2.8rem)] font-medium uppercase leading-[1] tracking-[0.02em]">
             <span className="block">Adam</span>
             <span className="block">Roberts</span>
           </h1>
-          <p className="text-[12px] text-white/40 mt-4 leading-relaxed max-w-[220px]">
-            Grilled Pixels is my personal brand - I came up with it in 2004 based on &ldquo;cooking up ideas&rdquo;
+          <p className="text-[12px] text-white/40 mt-4 leading-relaxed max-w-[200px]">
+            <span className="inline-block mr-1">↑</span>Grilled Pixels is my personal brand - I came up with it in 2004 based on &ldquo;cooking up ideas&rdquo;
           </p>
         </div>
 
         {/* Design & Engineering heading */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
+          <span className="inline-block w-[6px] h-[6px] bg-white mb-3" />
           <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
             Design &amp;
           </span>
@@ -110,7 +111,7 @@ export function Hero() {
             {headlineElements.map((line) => (
               <div
                 key={line.text}
-                className={`text-[clamp(2.8rem,5.5vw,5.5rem)] font-semibold uppercase leading-[0.95] tracking-[-0.02em] ${line.font}`}
+                className={`text-[clamp(2.4rem,4.2vw,4.8rem)] font-semibold uppercase leading-[0.95] tracking-[-0.02em] ${line.font}`}
               >
                 {line.text}
               </div>

@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="border-t border-white/[0.06] px-[2.4rem] py-[10rem] flex justify-between items-center">
       <span className="text-white/40 text-[11px] font-mono uppercase tracking-[0.1em]">
-        COPYRIGHT 2025 · ALL RIGHTS RESERVED
+        COPYRIGHT 2026 · ALL RIGHTS RESERVED
       </span>
       <div className="flex gap-4">
         {socialLinks.map((link) => (
