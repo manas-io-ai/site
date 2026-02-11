@@ -45,5 +45,13 @@ export function openCalPopup(
         notes: prefill.notes,
       },
     });
+  } else {
+    // Fallback: open Cal.com in new tab if embed didn't load
+    const params = new URLSearchParams({
+      name: prefill.name,
+      email: prefill.email,
+      notes: prefill.notes,
+    });
+    window.open(`https://cal.com/${calLink}?${params}`, '_blank');
   }
 }

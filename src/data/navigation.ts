@@ -3,7 +3,6 @@ import { NavItem, SocialLink } from '@/types';
 export const navItems: NavItem[] = [
   { label: 'Control', href: '#control', variant: 'default' },
   { label: 'About', href: '#about', variant: 'default' },
-  { label: 'Skills. Insights, Research, etc.', href: '#skills', variant: 'accent' },
   { label: 'INQUIRE', href: '#discovery', variant: 'cta' },
 ];
 
