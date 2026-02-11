@@ -1,5 +1,9 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Manas AI Logo - Two interlocking curves -->
-  <path d="M13.5 6C9.4 6 6 10.5 6 16s3.4 10 7.5 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-  <path d="M18.5 6c4.1 0 7.5 4.5 7.5 10s-3.4 10-7.5 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Manas AI Logo — Two interlocking curves -->
+  <!-- Right curve bottom half (behind at bottom crossing) -->
+  <path d="M28 16 C28 24, 22 27.5, 13.5 27.5" stroke="white" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <!-- Full left curve (in front at bottom crossing) -->
+  <path d="M18.5 4.5 C10 4.5, 4 8, 4 16 C4 24, 10 27.5, 18.5 27.5" stroke="white" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <!-- Right curve top half (in front at top crossing) -->
+  <path d="M13.5 4.5 C22 4.5, 28 8, 28 16" stroke="white" stroke-width="2.8" stroke-linecap="round" fill="none"/>
 </svg>

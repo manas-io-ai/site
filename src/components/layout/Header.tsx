@@ -28,39 +28,34 @@ export function Header() {
       {/* Manas AI Logo */}
       <a href="#" aria-label="Home">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13.5 6C9.4 6 6 10.5 6 16s3.4 10 7.5 10" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-          <path d="M18.5 6c4.1 0 7.5 4.5 7.5 10s-3.4 10-7.5 10" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+          <path d="M28 16 C28 24, 22 27.5, 13.5 27.5" stroke="white" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
+          <path d="M18.5 4.5 C10 4.5, 4 8, 4 16 C4 24, 10 27.5, 18.5 27.5" stroke="white" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
+          <path d="M13.5 4.5 C22 4.5, 28 8, 28 16" stroke="white" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
         </svg>
       </a>
 
-      {/* Spacer */}
-      <div className="flex-1" />
+      {/* Left spacer — larger to push nav right, aligning with content col 3 */}
+      <div className="flex-[3]" />
 
       {/* Main nav items */}
-      <nav className="flex items-center">
-        {mainNavItems.map((item, index) => (
+      <nav className="flex items-center gap-6">
+        {mainNavItems.map((item) => (
           <span key={item.label} className="flex items-center">
-            {index > 0 && (
-              <span className="text-white/20 mx-3 text-[13px] select-none">&middot;</span>
-            )}
             {item.label === 'Control' ? (
               <a
                 href={item.href}
                 className="flex items-center gap-1.5 font-mono-alt text-[13px] uppercase tracking-[0.1rem] text-white/60 hover:text-white transition-colors duration-300"
               >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0">
-                  <rect x="1" y="1" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="1.2"/>
-                  <path d="M3.5 6L5.5 8L8.5 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <span className="w-2 h-2 bg-accent flex-shrink-0" />
                 {item.label}
               </a>
             ) : (
               <a
                 href={item.href}
-                className={`font-mono-alt text-[13px] tracking-[0.1rem] transition-colors duration-300 ${
+                className={`font-mono-alt text-[13px] uppercase tracking-[0.1rem] transition-colors duration-300 ${
                   item.variant === 'accent'
                     ? 'text-accent hover:text-accent/80'
-                    : 'text-white/60 hover:text-white uppercase'
+                    : 'text-white/60 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -70,7 +65,7 @@ export function Header() {
         ))}
       </nav>
 
-      {/* Spacer */}
+      {/* Right spacer */}
       <div className="flex-1" />
 
       {/* INQUIRE CTA */}

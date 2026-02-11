@@ -49,47 +49,46 @@ export function Hero() {
         {/* Col 1: Name + brand description */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
           <h1 className="text-[clamp(1.4rem,2.5vw,2.8rem)] font-medium uppercase leading-[1] tracking-[0.02em]">
-            <span className="block font-pixel">MANAS</span>
+            <span className="block">MANAS</span>
             <span className="block font-pixel">AI</span>
           </h1>
-          <p className="text-[12px] text-white/40 mt-4 leading-relaxed max-w-[200px]">
+          <p className="text-[12px] text-white/40 font-mono mt-4 leading-relaxed max-w-[200px]">
             <span className="inline-block mr-1">↑</span>Manas (मनस) primarily means mind, intellect, or thought in Sanskrit
           </p>
         </div>
 
-        {/* Col 2: Agency heading with dot */}
+        {/* Col 2: Agency heading */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
-          <span className="inline-block w-[6px] h-[6px] bg-white mb-3" />
-          <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
+          <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-pixel font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
             Agency &amp;
           </span>
-          <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
+          <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-pixel font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
             Studio
           </span>
         </div>
 
         {/* Col 3: Products */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
-          <span className="text-[14px] font-mono uppercase tracking-[0.1em] text-white/40 block mb-3">
+          <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-3">
             Products
           </span>
-          <p className="text-[14px] text-white/60 leading-relaxed max-w-[260px]">
-            {products.map((product, i) => (
-              <span key={product.name}>
-                {product.name}{i < products.length - 1 ? ', ' : ''}
+          <div className="flex flex-col gap-1.5">
+            {products.map((product) => (
+              <span key={product.name} className="text-[14px] text-white/80 leading-tight">
+                {product.name}
               </span>
             ))}
-          </p>
+          </div>
         </div>
 
         {/* Col 4: Services */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
-          <span className="text-[14px] font-mono uppercase tracking-[0.1em] text-white/40 block mb-3">
+          <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-3">
             Services
           </span>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1.5">
             {services.map((service) => (
-              <span key={service.name} className="text-[13px] text-white/60 leading-tight">
+              <span key={service.name} className="text-[14px] text-white/80 leading-tight">
                 {service.name}
               </span>
             ))}
