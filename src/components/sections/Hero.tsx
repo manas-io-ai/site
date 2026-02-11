@@ -5,14 +5,14 @@ import gsap from 'gsap';
 import { products } from '@/data/products';
 import { services } from '@/data/services';
 
-const headlineElements = [
-  { text: 'WE DESIGN', font: 'font-sans' },
-  { text: 'ALIGNED INTELLIGENCE', font: 'font-pixel' },
-  { text: 'SYSTEMS FOR', font: 'font-sans' },
-  { text: 'HIGH-PERFORMERS', font: 'font-pixel' },
-  { text: 'AND HUNGRY TEAMS WITH', font: 'font-sans' },
-  { text: 'PRECISION, LEVERAGE', font: 'font-pixel' },
-  { text: 'AND TASTE.', font: 'font-sans' },
+const headlineLines = [
+  [{ text: 'WE DESIGN', font: 'font-sans' }],
+  [{ text: 'ALIGNED ', font: 'font-pixel' }, { text: 'INTELLIGENCE', font: 'font-sans' }],
+  [{ text: 'SYSTEMS FOR', font: 'font-sans' }],
+  [{ text: 'HIGH-PERFORMERS', font: 'font-sans' }],
+  [{ text: 'AND HUNGRY TEAMS WITH', font: 'font-sans' }],
+  [{ text: 'PRECISION, LEVERAGE', font: 'font-pixel' }],
+  [{ text: 'AND ', font: 'font-sans' }, { text: 'TASTE.', font: 'font-pixel' }],
 ];
 
 export function Hero() {
@@ -102,12 +102,14 @@ export function Hero() {
 
         <div className="hero-fade col-span-4 md:col-span-8 pb-[2.4rem] flex items-end">
           <div>
-            {headlineElements.map((line) => (
+            {headlineLines.map((segments, i) => (
               <div
-                key={line.text}
-                className={`text-[clamp(1.8rem,3.15vw,3.6rem)] font-semibold uppercase leading-[0.95] tracking-[-0.02em] ${line.font}`}
+                key={i}
+                className="text-[clamp(1.8rem,3.15vw,3.6rem)] font-semibold uppercase leading-[0.95] tracking-[-0.02em]"
               >
-                {line.text}
+                {segments.map((seg, j) => (
+                  <span key={j} className={seg.font}>{seg.text}</span>
+                ))}
               </div>
             ))}
           </div>
@@ -121,7 +123,7 @@ export function Hero() {
 
         <div className="hero-fade col-span-2 md:col-span-6 pb-[1.2rem] flex items-end">
           <span className="text-[12px] text-white/40 font-mono">
-            Tech moves fast. You should move faster...{' '}
+            Tech moves fast...{' '}
             <a
               href="#discovery"
               onClick={handleScheduleClick}

@@ -26,7 +26,7 @@ export function Footer() {
       </div>
 
       {/* 4-column grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 max-w-4xl mx-auto">
         <div>
           <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-4">
             Products
