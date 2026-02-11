@@ -43,6 +43,10 @@ yarn-error.log*
 *.mov
 arsenal.md
 
+# debug screenshots & playwright
+/*.png
+.playwright-mcp/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

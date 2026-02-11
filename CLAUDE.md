@@ -30,8 +30,8 @@ Header (fixed)  →  Hero  →  PoweredBy  →  DiscoveryCall  →  Footer
 
 - **`src/components/layout/`** — Fixed chrome: Header, Footer, LenisProvider
 - **`src/components/sections/`** — Full-width scroll sections: Hero, PoweredBy, DiscoveryCall
-- **`src/components/ui/`** — Reusable pieces: Button, CustomCursor
-- **`src/components/animations/`** — GSAP/CSS animation wrappers: TextReveal, Marquee, ScrollReveal, HoverScale
+- **`src/components/ui/`** — Reusable pieces: Button, FormInput, CalEmbed, CustomCursor
+- **`src/components/animations/`** — GSAP/CSS animation wrappers: Marquee, ScrollReveal
 
 ### Data Layer
 
@@ -60,6 +60,18 @@ The `marquee-scroll` CSS keyframe in `globals.css` drives all marquee animations
 ### Font System
 
 Real fonts downloaded into `public/fonts/`. `src/lib/fonts.ts` has `next/font/local` declarations for four families: untitledSans (display/body), tronicaMono (labels/marquees), atHaussMono (tags), pixelFont (headings/brand). CSS variables applied via `<html>` className in layout.tsx.
+
+### Logo
+
+The Manas AI logo (two interlocking curves) lives at `public/images/manas-logo.png` (cropped tight, ~407x414). Used via `next/image` in both Header (36px) and Footer (72px). An SVG version exists at `public/svg/logo.svg` but is not used in components — the PNG renders the interlocking detail better at small sizes.
+
+### Header Layout
+
+Nav is pushed right (not centered) using asymmetric flex spacers (`flex-[3]` left, `flex-1` right) to align with the hero's column 3. Nav items use `gap-6` spacing (no bullet separators). All items are uppercase. The "Control" item has a small red square indicator (`w-2 h-2 bg-accent`).
+
+### Hero Row 1 Typography
+
+Column 1 name alternates fonts: "MANAS" in sans-serif, "AI" in pixel font. Description uses `font-mono`. Column 2 heading ("Agency & Studio") uses `font-pixel`. Column labels ("Products", "Services") are 11px with 0.15em tracking. Content text is `text-white/80`. Both products and services list one item per line with `gap-1.5`.
 
 ### Export Style Inconsistency
 
