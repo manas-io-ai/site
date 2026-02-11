@@ -4,6 +4,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   href?: string;
+  type?: 'button' | 'submit';
 }
 
 const shared =
@@ -21,6 +22,7 @@ export default function Button({
   className = '',
   onClick,
   href,
+  type = 'button',
 }: ButtonProps) {
   const classes = `${shared} ${variants[variant]} ${className}`;
 
@@ -33,7 +35,7 @@ export default function Button({
   }
 
   return (
-    <button className={classes} onClick={onClick}>
+    <button type={type} className={classes} onClick={onClick}>
       {children}
     </button>
   );

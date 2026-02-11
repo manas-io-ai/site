@@ -24,3 +24,11 @@ export interface PartnerLogo {
   name: string;
   src: string;
 }
+
+export interface IntakeFormData {
+  name: string;
+  email: string;
+  company: string;
+  interest: string;
+  message: string;
+}

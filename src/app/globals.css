@@ -58,7 +58,7 @@ html.lenis, html.lenis body {
   overflow: hidden;
 }
 
-.lenis.lenis-scrolling iframe {
+.lenis.lenis-scrolling iframe:not([data-cal-embed]) {
   pointer-events: none;
 }
 
@@ -103,5 +103,13 @@ html.lenis, html.lenis body {
 
 .font-mono-alt {
   font-family: var(--font-mono-alt), monospace;
+}
+
+/* Form focus styles */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid #EE344A;
+  outline-offset: -1px;
 }
 
