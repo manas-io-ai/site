@@ -158,13 +158,13 @@ export default function IntakeFunnel() {
             {current.title}
           </h3>
         </div>
-        <p className="text-white/40 text-[15px] ml-[42px]">
+        <p className="text-white/40 text-[15px] ml-0 sm:ml-[42px]">
           {current.subtitle}
         </p>
       </div>
 
       {/* Step content */}
-      <form onSubmit={handleSubmit(onSubmit)} className="pl-[42px]">
+      <form onSubmit={handleSubmit(onSubmit)} className="pl-0 sm:pl-[42px]">
         {/* Step: Segment */}
         {current.key === 'segment' && (
           <Controller

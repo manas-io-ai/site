@@ -8,7 +8,7 @@ interface ButtonProps {
 }
 
 const shared =
-  'relative inline-flex items-center justify-center font-mono-alt text-[14px] uppercase tracking-[0.1em] px-[3.6rem] py-[1.6rem] rounded-full overflow-hidden transition-all duration-[800ms] ease-[cubic-bezier(0.43,0.195,0.02,1)] cursor-pointer';
+  'relative inline-flex items-center justify-center font-mono-alt text-[14px] uppercase tracking-[0.1em] px-8 py-3 sm:px-[3.6rem] sm:py-[1.6rem] rounded-full overflow-hidden transition-all duration-[800ms] ease-[cubic-bezier(0.43,0.195,0.02,1)] cursor-pointer';
 
 const variants = {
   primary: 'bg-accent text-white hover:bg-accent/90',

@@ -30,13 +30,13 @@ function PartnerItem({ name, src }: { name: string; src: string }) {
 
 export default function PoweredBy() {
   return (
-    <section className="py-20 px-[2.4rem]">
+    <section className="py-12 sm:py-20 px-[2.4rem]">
       <ScrollReveal>
         <span className="text-[14px] font-pixel uppercase tracking-[0.2em] text-white/40 block mb-8">
           Powered By
         </span>
 
-        <div className="border border-white/[0.06] rounded-xl overflow-hidden py-8" style={{ perspective: '1000px' }}>
+        <div className="border border-white/[0.06] rounded-xl overflow-hidden py-4 sm:py-8" style={{ perspective: '1000px' }}>
           <div style={{ transform: 'rotateX(2deg)' }}>
             <Marquee speed={60} pauseOnHover={false}>
               {partners.map((partner) => (

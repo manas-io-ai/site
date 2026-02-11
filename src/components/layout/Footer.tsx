@@ -16,17 +16,17 @@ const more = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] px-[2.4rem] pt-[6rem] pb-[3rem]">
+    <footer className="border-t border-white/[0.06] px-[2.4rem] pt-12 sm:pt-[6rem] pb-[3rem]">
       {/* Brand */}
-      <div className="mb-16 flex items-center gap-6">
+      <div className="mb-8 sm:mb-16 flex flex-wrap items-center gap-6">
         <Image src="/images/manas-logo.png" alt="Manas AI" width={72} height={72} />
-        <span className="text-[clamp(3rem,6vw,6rem)] font-pixel uppercase leading-[0.9] tracking-[-0.02em]">
+        <span className="text-[clamp(2rem,6vw,6rem)] font-pixel uppercase leading-[0.9] tracking-[-0.02em]">
           MANAS AI
         </span>
       </div>
 
       {/* 4-column grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8 sm:mb-16 max-w-4xl mx-auto">
         <div>
           <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-4">
             Products

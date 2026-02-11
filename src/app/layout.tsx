@@ -1,8 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { LenisProvider } from "@/components/layout/LenisProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
 import { untitledSans, tronicaMono, atHaussMono, pixelFont } from "@/lib/fonts";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Manas AI — Agency & Studio",

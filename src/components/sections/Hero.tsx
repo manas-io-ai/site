@@ -41,13 +41,13 @@ export function Hero() {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen pt-[72px] px-[2.4rem]">
-      <div className="h-[calc(100vh-72px)] grid grid-cols-4 md:grid-cols-12 grid-rows-[auto_1fr_auto_auto] gap-x-[2.4rem] lg:gap-x-[3.6rem]">
+    <section ref={sectionRef} className="relative min-h-screen pt-14 sm:pt-[72px] px-[2.4rem]">
+      <div className="min-h-[calc(100vh-56px)] md:h-[calc(100vh-72px)] grid grid-cols-4 md:grid-cols-12 grid-rows-[auto_1fr_auto_auto] gap-x-4 sm:gap-x-[2.4rem] lg:gap-x-[3.6rem]">
 
         {/* === Row 1: Top metadata (4 equal columns) === */}
 
         {/* Col 1: Name + brand description */}
-        <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
+        <div className="hero-fade col-span-4 md:col-span-3 pt-4 sm:pt-[2.4rem]">
           <h1 className="text-[clamp(1.4rem,2.5vw,2.8rem)] font-medium uppercase leading-[1] tracking-[0.02em]">
             <span className="block">MANAS</span>
             <span className="block font-pixel">AI</span>
@@ -58,7 +58,7 @@ export function Hero() {
         </div>
 
         {/* Col 2: Agency heading */}
-        <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
+        <div className="hero-fade col-span-4 md:col-span-3 pt-4 sm:pt-[2.4rem]">
           <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-pixel font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
             Agency &amp;
           </span>
@@ -68,7 +68,7 @@ export function Hero() {
         </div>
 
         {/* Col 3: Products */}
-        <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
+        <div className="hero-fade col-span-4 md:col-span-3 pt-4 sm:pt-[2.4rem]">
           <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-3">
             Products
           </span>
@@ -82,7 +82,7 @@ export function Hero() {
         </div>
 
         {/* Col 4: Services */}
-        <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
+        <div className="hero-fade col-span-4 md:col-span-3 pt-4 sm:pt-[2.4rem]">
           <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-3">
             Services
           </span>
@@ -100,7 +100,7 @@ export function Hero() {
 
         {/* === Row 3: Giant headline (left) === */}
 
-        <div className="hero-fade col-span-4 md:col-span-8 pb-[2.4rem] flex items-end">
+        <div className="hero-fade col-span-4 md:col-span-8 pb-4 sm:pb-[2.4rem] flex items-end">
           <div>
             {headlineLines.map((segments, i) => (
               <div
@@ -116,12 +116,12 @@ export function Hero() {
         </div>
 
         {/* Right side of headline row (aligned bottom-right) */}
-        <div className="hero-fade col-span-4 md:col-span-4 pb-[2.4rem] flex items-end justify-end">
+        <div className="hero-fade col-span-4 md:col-span-4 pb-4 sm:pb-[2.4rem] flex items-end justify-end">
         </div>
 
         {/* === Row 4: Bottom strip === */}
 
-        <div className="hero-fade col-span-2 md:col-span-6 pb-[1.2rem] flex items-end">
+        <div className="hero-fade col-span-2 md:col-span-6 pb-2 sm:pb-[1.2rem] flex items-end">
           <span className="text-[12px] text-white/40 font-mono">
             Tech moves fast...{' '}
             <a
@@ -134,7 +134,7 @@ export function Hero() {
           </span>
         </div>
 
-        <div className="hero-fade col-span-2 md:col-span-6 pb-[1.2rem] flex items-end justify-end">
+        <div className="hero-fade col-span-2 md:col-span-6 pb-2 sm:pb-[1.2rem] flex items-end justify-end">
           <span className="text-[12px] text-white/40 font-mono">
             Now accepting Q2 2025 engagements
           </span>
