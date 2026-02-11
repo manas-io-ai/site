@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { products } from '@/data/products';
 import { services } from '@/data/services';
 
@@ -18,11 +19,7 @@ export function Footer() {
     <footer className="border-t border-white/[0.06] px-[2.4rem] pt-[6rem] pb-[3rem]">
       {/* Brand */}
       <div className="mb-16 flex items-center gap-6">
-        <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M28 16 C28 24, 22 27.5, 13.5 27.5" stroke="white" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
-          <path d="M18.5 4.5 C10 4.5, 4 8, 4 16 C4 24, 10 27.5, 18.5 27.5" stroke="white" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
-          <path d="M13.5 4.5 C22 4.5, 28 8, 28 16" stroke="white" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
-        </svg>
+        <Image src="/images/manas-logo.png" alt="Manas AI" width={72} height={72} />
         <span className="text-[clamp(3rem,6vw,6rem)] font-pixel uppercase leading-[0.9] tracking-[-0.02em]">
           MANAS AI
         </span>
