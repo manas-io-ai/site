@@ -95,6 +95,32 @@ export function Hero() {
           </div>
         </div>
 
+        {/* === Mobile-only: Products & Services row === */}
+        <div className="hero-fade col-span-2 md:hidden pt-4">
+          <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-3">
+            Products
+          </span>
+          <div className="flex flex-col gap-1.5">
+            {products.map((product) => (
+              <span key={product.name} className="text-[14px] text-white/80 leading-tight">
+                {product.name}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="hero-fade col-span-2 md:hidden pt-4 text-right">
+          <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-3">
+            Services
+          </span>
+          <div className="flex flex-col gap-1.5">
+            {services.map((service) => (
+              <span key={service.name} className="text-[14px] text-white/80 leading-tight">
+                {service.name}
+              </span>
+            ))}
+          </div>
+        </div>
+
         {/* === Row 2: Center spacer (1fr — fills remaining viewport) === */}
         <div className="col-span-4 md:col-span-12" />
 
