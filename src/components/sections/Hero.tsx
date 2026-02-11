@@ -47,7 +47,7 @@ export function Hero() {
         {/* === Row 1: Top metadata (4 equal columns) === */}
 
         {/* Col 1: Name + brand description */}
-        <div className="hero-fade col-span-4 md:col-span-3 pt-4 sm:pt-[2.4rem]">
+        <div className="hero-fade col-span-2 md:col-span-3 pt-4 sm:pt-[2.4rem]">
           <h1 className="text-[clamp(1.4rem,2.5vw,2.8rem)] font-medium uppercase leading-[1] tracking-[0.02em]">
             <span className="block">MANAS</span>
             <span className="block font-pixel">AI</span>
@@ -58,7 +58,7 @@ export function Hero() {
         </div>
 
         {/* Col 2: Agency heading */}
-        <div className="hero-fade col-span-4 md:col-span-3 pt-4 sm:pt-[2.4rem]">
+        <div className="hero-fade col-span-2 md:col-span-3 pt-4 sm:pt-[2.4rem] text-right md:text-left">
           <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-pixel font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
             Agency &amp;
           </span>
@@ -68,7 +68,7 @@ export function Hero() {
         </div>
 
         {/* Col 3: Products */}
-        <div className="hero-fade col-span-4 md:col-span-3 pt-4 sm:pt-[2.4rem]">
+        <div className="hero-fade hidden md:block md:col-span-3 pt-4 sm:pt-[2.4rem]">
           <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-3">
             Products
           </span>
@@ -82,7 +82,7 @@ export function Hero() {
         </div>
 
         {/* Col 4: Services */}
-        <div className="hero-fade col-span-4 md:col-span-3 pt-4 sm:pt-[2.4rem]">
+        <div className="hero-fade hidden md:block md:col-span-3 pt-4 sm:pt-[2.4rem]">
           <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 block mb-3">
             Services
           </span>
