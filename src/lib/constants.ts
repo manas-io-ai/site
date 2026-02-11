@@ -1,4 +1,4 @@
-// Design tokens from grilledpixels.com
+// Design tokens for Manas AI
 
 export const COLORS = {
   black: '#000000',
@@ -8,15 +8,6 @@ export const COLORS = {
   white12: 'rgba(255, 255, 255, 0.12)',
   white40: 'rgba(255, 255, 255, 0.40)',
   white60: 'rgba(255, 255, 255, 0.60)',
-} as const;
-
-export const PROJECT_GRADIENTS = {
-  finkee: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 100%)',
-  otherside: 'linear-gradient(180deg, #0f0f23 0%, #1a0a2e 100%)',
-  eiger: 'linear-gradient(180deg, #1e1e1e 0%, #2d2d2d 100%)',
-  supervoice: 'linear-gradient(180deg, #0a1628 0%, #1a2744 100%)',
-  retreater: 'linear-gradient(180deg, #1a2e1a 0%, #0f2010 100%)',
-  liquidCrystal: 'linear-gradient(180deg, #2e1a2e 0%, #1a0f2e 100%)',
 } as const;
 
 export const EASING = {

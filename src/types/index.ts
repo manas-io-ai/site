@@ -2,6 +2,7 @@ export interface NavItem {
   label: string;
   href: string;
   isActive?: boolean;
+  variant?: 'default' | 'accent' | 'cta';
 }
 
 export interface SocialLink {
@@ -15,33 +16,11 @@ export interface Service {
   category?: string;
 }
 
-export interface AwardBadge {
+export interface Product {
   name: string;
-  count: number;
-  icon: string;
 }
 
-export interface ProjectTag {
-  label: string;
-}
-
-export interface Project {
-  id: string;
+export interface PartnerLogo {
   name: string;
-  displayName: string; // The marquee display text
-  tags: ProjectTag[];
-  image: string;
-  video?: string;
-  gradient: string; // CSS gradient or bg color
-  tagline: string;
-  caseStudyUrl: string;
-  audioBreakdownUrl?: string;
-}
-
-export interface ArchiveProject {
-  id: string;
-  name: string;
-  thumbnail: string;
-  category: string;
-  year?: string;
+  src: string;
 }

@@ -14,7 +14,7 @@ No linter or test runner is configured. Use `npm run build` to catch type errors
 
 ## Architecture
 
-This is a **Grilled Pixels replica** — a single-page creative portfolio site built as a visual clone of grilledpixels.com.
+This is the **Manas AI** website — an AI agency & studio single-page site. Design language (dark theme, accent red, mixed fonts, smooth scroll, custom cursor) originates from a Grilled Pixels design system, now fully rebranded.
 
 **Stack:** Next.js 16 (App Router) + Tailwind CSS v4 + GSAP + Lenis smooth scroll
 
@@ -23,23 +23,23 @@ This is a **Grilled Pixels replica** — a single-page creative portfolio site b
 `src/app/page.tsx` assembles all sections in order. The entire site is one page with scroll sections:
 
 ```
-Header (fixed)  →  Hero  →  Projects  →  Catalog  →  CTA  →  Footer  →  BottomBar (fixed)
+Header (fixed)  →  Hero  →  PoweredBy  →  DiscoveryCall  →  Footer
 ```
 
 ### Component Organization
 
-- **`src/components/layout/`** — Fixed chrome: Header, BottomBar, Footer, LenisProvider
-- **`src/components/sections/`** — Full-width scroll sections: Hero, Projects, Catalog, CTA
-- **`src/components/ui/`** — Reusable pieces: Button, ProjectCard, TagPill, ArchiveItem, etc.
+- **`src/components/layout/`** — Fixed chrome: Header, Footer, LenisProvider
+- **`src/components/sections/`** — Full-width scroll sections: Hero, PoweredBy, DiscoveryCall
+- **`src/components/ui/`** — Reusable pieces: Button, CustomCursor
 - **`src/components/animations/`** — GSAP/CSS animation wrappers: TextReveal, Marquee, ScrollReveal, HoverScale
 
 ### Data Layer
 
 All content lives in static TypeScript files under `src/data/`:
-- `projects.ts` — 6 featured projects with gradients, tags, taglines
-- `archive.ts` — 76 archive items (generated from name array)
-- `services.ts` — 12 service offerings
-- `navigation.ts` — Nav items and social links
+- `products.ts` — 3 AI products (Personal Assistant, Executive Assistant, Agent Workforce)
+- `services.ts` — 7 service offerings
+- `partners.ts` — 9 technology partners with logo paths
+- `navigation.ts` — Nav items (with variant support: default/accent/cta) and social links
 
 Types are centralized in `src/types/index.ts`.
 
@@ -59,7 +59,7 @@ The `marquee-scroll` CSS keyframe in `globals.css` drives all marquee animations
 
 ### Font System
 
-Fonts are currently **system fallbacks** (defined as CSS variables in globals.css). The `src/lib/fonts.ts` file contains commented-out `next/font/local` declarations ready to activate when real woff2 files are added to `public/fonts/`. Four font families: untitledSans (display/body), tronicaMono (labels), atHaussMono (tags), pixel bitmap (marquees).
+Real fonts downloaded into `public/fonts/`. `src/lib/fonts.ts` has `next/font/local` declarations for four families: untitledSans (display/body), tronicaMono (labels/marquees), atHaussMono (tags), pixelFont (headings/brand). CSS variables applied via `<html>` className in layout.tsx.
 
 ### Export Style Inconsistency
 

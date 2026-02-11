@@ -2,29 +2,17 @@
 
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { AwardBadge } from '@/components/ui/AwardBadge';
-import { VideoPlayer } from '@/components/ui/VideoPlayer';
-
-const awards = [
-  { name: 'FWA', count: 1 },
-  { name: 'Webby', count: 7 },
-  { name: 'CSSDesignAwards', count: 22 },
-];
-
-const heroServices = [
-  'Branding',
-  'Creative Direction & Strategy',
-  'UX / UI Design',
-  'Web Development (React/Nextjs)',
-  'eCommerce, Product, 3D, WebGL',
-  'Video & Animation',
-];
+import { products } from '@/data/products';
+import { services } from '@/data/services';
 
 const headlineElements = [
-  { text: 'I BRING THE', font: 'font-sans' },
-  { text: 'UNEXPECTED', font: 'font-pixel' },
-  { text: 'TO BRAND & DIGITAL', font: 'font-sans' },
-  { text: 'EXPERIENCES', font: 'font-pixel' },
+  { text: 'WE DESIGN', font: 'font-sans' },
+  { text: 'ALIGNED INTELLIGENCE', font: 'font-pixel' },
+  { text: 'SYSTEMS FOR', font: 'font-sans' },
+  { text: 'HIGH-PERFORMERS', font: 'font-pixel' },
+  { text: 'AND HUNGRY TEAMS WITH', font: 'font-sans' },
+  { text: 'PRECISION, LEVERAGE', font: 'font-pixel' },
+  { text: 'AND TASTE.', font: 'font-sans' },
 ];
 
 export function Hero() {
@@ -46,72 +34,79 @@ export function Hero() {
     });
   }, []);
 
+  const handleScheduleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const target = document.querySelector('#discovery');
+    target?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section ref={sectionRef} className="relative min-h-screen pt-[72px] px-[2.4rem]">
-      <div className="h-[calc(100vh-72px)] grid grid-cols-4 md:grid-cols-12 grid-rows-[auto_1fr_auto] gap-x-[2.4rem] lg:gap-x-[3.6rem]">
+      <div className="h-[calc(100vh-72px)] grid grid-cols-4 md:grid-cols-12 grid-rows-[auto_1fr_auto_auto] gap-x-[2.4rem] lg:gap-x-[3.6rem]">
 
-        {/* === Row 1: Top metadata === */}
+        {/* === Row 1: Top metadata (4 equal columns) === */}
 
-        {/* Name + brand quote */}
+        {/* Col 1: Name + brand description */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
           <h1 className="text-[clamp(1.4rem,2.5vw,2.8rem)] font-medium uppercase leading-[1] tracking-[0.02em]">
-            <span className="block">Adam</span>
-            <span className="block">Roberts</span>
+            <span className="block font-pixel">MANAS</span>
+            <span className="block font-pixel">AI</span>
           </h1>
           <p className="text-[12px] text-white/40 mt-4 leading-relaxed max-w-[200px]">
-            <span className="inline-block mr-1">↑</span>Grilled Pixels is my personal brand - I came up with it in 2004 based on &ldquo;cooking up ideas&rdquo;
+            <span className="inline-block mr-1">↑</span>Manas (मनस) primarily means mind, intellect, or thought in Sanskrit
           </p>
         </div>
 
-        {/* Design & Engineering heading */}
+        {/* Col 2: Agency heading with dot */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
           <span className="inline-block w-[6px] h-[6px] bg-white mb-3" />
           <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
-            Design &amp;
+            Agency &amp;
           </span>
           <span className="text-[clamp(1.4rem,2vw,2.4rem)] font-semibold uppercase leading-[1.1] tracking-[0.02em] block">
-            Engineering
+            Studio
           </span>
         </div>
 
-        {/* What I Do */}
+        {/* Col 3: Products */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
           <span className="text-[14px] font-mono uppercase tracking-[0.1em] text-white/40 block mb-3">
-            What I Do
+            Products
           </span>
           <p className="text-[14px] text-white/60 leading-relaxed max-w-[260px]">
-            I create high-impact digital experiences for brands, websites and digital products
+            {products.map((product, i) => (
+              <span key={product.name}>
+                {product.name}{i < products.length - 1 ? ', ' : ''}
+              </span>
+            ))}
           </p>
         </div>
 
-        {/* Services */}
+        {/* Col 4: Services */}
         <div className="hero-fade col-span-4 md:col-span-3 pt-[2.4rem]">
           <span className="text-[14px] font-mono uppercase tracking-[0.1em] text-white/40 block mb-3">
             Services
           </span>
           <div className="flex flex-col gap-1">
-            {heroServices.map((service) => (
-              <span key={service} className="text-[13px] text-white/60 leading-tight">
-                {service}
+            {services.map((service) => (
+              <span key={service.name} className="text-[13px] text-white/60 leading-tight">
+                {service.name}
               </span>
             ))}
           </div>
         </div>
 
-        {/* === Row 2: Video (centered) === */}
-        <div className="hero-fade col-span-4 md:col-start-4 md:col-span-6 flex items-center justify-center">
-          <VideoPlayer className="w-[60%] sm:w-[45%] lg:w-[35%] max-w-[500px]" />
-        </div>
+        {/* === Row 2: Center spacer (1fr — fills remaining viewport) === */}
+        <div className="col-span-4 md:col-span-12" />
 
-        {/* === Row 3: Headline + Awards === */}
+        {/* === Row 3: Giant headline (left) === */}
 
-        {/* Giant headline */}
         <div className="hero-fade col-span-4 md:col-span-8 pb-[2.4rem] flex items-end">
           <div>
             {headlineElements.map((line) => (
               <div
                 key={line.text}
-                className={`text-[clamp(2.4rem,4.2vw,4.8rem)] font-semibold uppercase leading-[0.95] tracking-[-0.02em] ${line.font}`}
+                className={`text-[clamp(1.8rem,3.15vw,3.6rem)] font-semibold uppercase leading-[0.95] tracking-[-0.02em] ${line.font}`}
               >
                 {line.text}
               </div>
@@ -119,15 +114,29 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Awards */}
-        <div className="hero-fade col-span-4 md:col-span-4 pb-[2.4rem] flex flex-row flex-wrap justify-end items-end gap-2">
-          {awards.map((award) => (
-            <AwardBadge
-              key={award.name}
-              name={award.name}
-              count={award.count}
-            />
-          ))}
+        {/* Right side of headline row (aligned bottom-right) */}
+        <div className="hero-fade col-span-4 md:col-span-4 pb-[2.4rem] flex items-end justify-end">
+        </div>
+
+        {/* === Row 4: Bottom strip === */}
+
+        <div className="hero-fade col-span-2 md:col-span-6 pb-[1.2rem] flex items-end">
+          <span className="text-[12px] text-white/40 font-mono">
+            Tech moves fast. You should move faster...{' '}
+            <a
+              href="#discovery"
+              onClick={handleScheduleClick}
+              className="text-accent hover:text-accent/80 transition-colors duration-300"
+            >
+              Schedule a call
+            </a>
+          </span>
+        </div>
+
+        <div className="hero-fade col-span-2 md:col-span-6 pb-[1.2rem] flex items-end justify-end">
+          <span className="text-[12px] text-white/40 font-mono">
+            Now accepting Q2 2025 engagements
+          </span>
         </div>
 
       </div>

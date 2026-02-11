@@ -1,10 +1,10 @@
 import { NavItem, SocialLink } from '@/types';
 
 export const navItems: NavItem[] = [
-  { label: 'PROJECTS', href: '#projects', isActive: true },
-  { label: 'ABOUT', href: '#about' },
-  { label: 'D.O.T', href: '#dot' },
-  { label: 'TALK', href: '#talk' },
+  { label: 'Control', href: '#control', variant: 'default' },
+  { label: 'About', href: '#about', variant: 'default' },
+  { label: 'Skills. Insights, Research, etc.', href: '#skills', variant: 'accent' },
+  { label: 'INQUIRE', href: '#discovery', variant: 'cta' },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -14,13 +14,8 @@ export const socialLinks: SocialLink[] = [
     icon: 'linkedin',
   },
   {
-    name: 'Instagram',
-    href: 'https://instagram.com',
-    icon: 'instagram',
-  },
-  {
-    name: 'Dribbble',
-    href: 'https://dribbble.com',
-    icon: 'dribbble',
+    name: 'X',
+    href: 'https://x.com',
+    icon: 'x',
   },
 ];

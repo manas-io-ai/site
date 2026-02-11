@@ -5,8 +5,8 @@ import { untitledSans, tronicaMono, atHaussMono, pixelFont } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Grilled Pixels — Design & Engineering",
-  description: "I bring the unexpected to brand & digital experiences. Design, engineering, and creative development.",
+  title: "Manas AI — Agency & Studio",
+  description: "We design aligned intelligence systems for high-performers and hungry teams with precision, leverage and taste.",
 };
 
 export default function RootLayout({

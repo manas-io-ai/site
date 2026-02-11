@@ -1,10 +1,8 @@
 import { Header } from "@/components/layout/Header";
-import { BottomBar } from "@/components/layout/BottomBar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import Projects from "@/components/sections/Projects";
-import Catalog from "@/components/sections/Catalog";
-import CTA from "@/components/sections/CTA";
+import PoweredBy from "@/components/sections/PoweredBy";
+import DiscoveryCall from "@/components/sections/DiscoveryCall";
 
 export default function Home() {
   return (
@@ -12,12 +10,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Projects />
-        <Catalog />
-        <CTA />
+        <PoweredBy />
+        <DiscoveryCall />
       </main>
       <Footer />
-      <BottomBar />
     </>
   );
 }
