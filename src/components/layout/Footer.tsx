@@ -5,7 +5,7 @@ import { services } from '@/data/services';
 const socials = [
   { name: 'LinkedIn', href: '#' },
   { name: 'X / Twitter', href: '#' },
-  { name: 'GitHub', href: '#' },
+  { name: 'Instagram', href: '#' },
 ];
 
 const more = [

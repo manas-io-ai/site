@@ -31,9 +31,6 @@ export default function AboutHero() {
             <span className="block">MANAS</span>
             <span className="block font-pixel">AI</span>
           </h1>
-          <p className="text-[12px] text-white/40 font-mono mt-4 leading-relaxed max-w-[200px]">
-            <span className="inline-block mr-1">&uarr;</span>Manas (&#x092E;&#x0928;&#x0938;) primarily means mind, intellect, or thought in Sanskrit
-          </p>
         </div>
 
         {/* Col 2: Agency heading */}

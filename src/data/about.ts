@@ -6,7 +6,7 @@ export interface Belief {
 
 export const bio = [
   'Manas AI is a Los Angeles based AI agency & studio. We partner with startups, brands, and agencies to design and deploy fluid intelligence strategies and products engineered to evolve with the pace of AI.',
-  'Founded in 2025 by Joseph Hillin, Manas stands on eight core beliefs that define advantage in the midst of the coming displacement:',
+  'Founded in 2025 by Joseph Hillin, Manas stands on eight core beliefs that define advantage in the midst of the coming disruption:',
 ];
 
 export const beliefs: Belief[] = [

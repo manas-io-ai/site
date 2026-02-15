@@ -13,8 +13,13 @@ export const socialLinks: SocialLink[] = [
     icon: 'linkedin',
   },
   {
-    name: 'X',
-    href: 'https://x.com',
-    icon: 'x',
+    name: 'Dribbble',
+    href: 'https://dribbble.com',
+    icon: 'dribbble',
+  },
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com',
+    icon: 'instagram',
   },
 ];
