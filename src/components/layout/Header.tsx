@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { navItems } from '@/data/navigation';
 
 const mainNavItems = navItems.filter((item) => item.variant !== 'cta');
@@ -10,6 +12,7 @@ const ctaItem = navItems.find((item) => item.variant === 'cta')!;
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,11 +36,28 @@ export function Header() {
     return () => document.removeEventListener('click', handleClick);
   }, [menuOpen]);
 
-  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    closeMenu();
-    const target = document.querySelector('#discovery');
-    target?.scrollIntoView({ behavior: 'smooth' });
+  const isAboutPage = pathname === '/about';
+
+  const renderNavLink = (item: typeof mainNavItems[number], className: string, onClick?: () => void) => {
+    // About uses Link for client-side navigation
+    if (item.label === 'About') {
+      return (
+        <Link
+          href={item.href}
+          onClick={onClick}
+          className={`${className} ${isAboutPage ? 'text-white' : ''}`}
+        >
+          {item.label}
+        </Link>
+      );
+    }
+    // Control and other hash-based links use <a>
+    return (
+      <a href={item.href} onClick={onClick} className={className}>
+        {item.label === 'Control' && <span className="w-2 h-2 bg-accent flex-shrink-0" />}
+        {item.label}
+      </a>
+    );
   };
 
   return (
@@ -46,9 +66,9 @@ export function Header() {
       className={`fixed top-0 z-50 w-full px-[2.4rem] py-4 sm:py-[2.4rem] flex items-center border-b border-white/[0.06] transition-all duration-300 ${scrolled || menuOpen ? 'bg-black/80 backdrop-blur-md' : ''}`}
     >
       {/* Manas AI Logo */}
-      <a href="#" aria-label="Home">
+      <Link href="/" aria-label="Home">
         <Image src="/images/manas-logo.png" alt="Manas AI" width={36} height={36} />
-      </a>
+      </Link>
 
       {/* Left spacer — larger to push nav right (desktop only) */}
       <div className="hidden md:block flex-[3]" />
@@ -57,25 +77,13 @@ export function Header() {
       <nav className="hidden md:flex items-center gap-6">
         {mainNavItems.map((item) => (
           <span key={item.label} className="flex items-center">
-            {item.label === 'Control' ? (
-              <a
-                href={item.href}
-                className="flex items-center gap-1.5 font-mono-alt text-[13px] uppercase tracking-[0.1rem] text-white/60 hover:text-white transition-colors duration-300"
-              >
-                <span className="w-2 h-2 bg-accent flex-shrink-0" />
-                {item.label}
-              </a>
-            ) : (
-              <a
-                href={item.href}
-                className={`font-mono-alt text-[13px] uppercase tracking-[0.1rem] transition-colors duration-300 ${
-                  item.variant === 'accent'
-                    ? 'text-accent hover:text-accent/80'
-                    : 'text-white/60 hover:text-white'
-                }`}
-              >
-                {item.label}
-              </a>
+            {renderNavLink(
+              item,
+              `${item.label === 'Control' ? 'flex items-center gap-1.5 ' : ''}font-mono-alt text-[13px] uppercase tracking-[0.1rem] ${
+                item.variant === 'accent'
+                  ? 'text-accent hover:text-accent/80'
+                  : 'text-white/60 hover:text-white'
+              } transition-colors duration-300`
             )}
           </span>
         ))}
@@ -87,7 +95,6 @@ export function Header() {
       {/* INQUIRE CTA (desktop only) */}
       <a
         href={ctaItem.href}
-        onClick={handleCtaClick}
         className="hidden md:inline font-mono-alt text-[13px] uppercase tracking-[0.1rem] text-white/60 hover:text-white transition-colors duration-300"
       >
         {ctaItem.label}
@@ -113,25 +120,23 @@ export function Header() {
         <div className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-white/[0.06] md:hidden">
           <nav className="flex flex-col px-[2.4rem] py-6 gap-4">
             {mainNavItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={closeMenu}
-                className={`font-mono-alt text-[14px] uppercase tracking-[0.1rem] transition-colors duration-300 ${
-                  item.variant === 'accent'
-                    ? 'text-accent hover:text-accent/80'
-                    : item.label === 'Control'
-                      ? 'text-white/60 hover:text-white flex items-center gap-1.5'
-                      : 'text-white/60 hover:text-white'
-                }`}
-              >
-                {item.label === 'Control' && <span className="w-2 h-2 bg-accent flex-shrink-0" />}
-                {item.label}
-              </a>
+              <span key={item.label}>
+                {renderNavLink(
+                  item,
+                  `font-mono-alt text-[14px] uppercase tracking-[0.1rem] transition-colors duration-300 ${
+                    item.variant === 'accent'
+                      ? 'text-accent hover:text-accent/80'
+                      : item.label === 'Control'
+                        ? 'text-white/60 hover:text-white flex items-center gap-1.5'
+                        : 'text-white/60 hover:text-white'
+                  }`,
+                  closeMenu
+                )}
+              </span>
             ))}
             <a
               href={ctaItem.href}
-              onClick={handleCtaClick}
+              onClick={closeMenu}
               className="font-mono-alt text-[14px] uppercase tracking-[0.1rem] text-accent hover:text-accent/80 transition-colors duration-300 mt-2"
             >
               {ctaItem.label}
